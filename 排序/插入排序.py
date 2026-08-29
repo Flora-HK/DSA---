@@ -12,3 +12,5 @@ def insertionSort(arr: list[int]) -> list[int]:
 if __name__ == '__main__':
     arr = [1, 3, 2, 5, 4, 6, 7, 8, 9, 10]
     print(insertionSort(arr))
+
+

@@ -75,4 +75,22 @@ if __name__ == '__main__':
     nums = [2, 1, 3, 4, 6, 5, 8, 7, 9]
     print(f'nums = {nums}')
     print(f'[find_min]: {find_min(nums)}')
-        
+
+
+# 4. 二分法的mid值计算，使用left + (right - left) / 2 = left + (right - left) >> 1可以保证无溢出情况发生，
+# (left + right) / 2，可能会出现left+ right溢出的情况发生，这样会导致mid为负值
+
+
+def find_max(arr: list[int], left: int, right: int) -> int:
+    '''用二分递归的方法来查找某个数组的最大值'''
+    if left == right:
+        return arr[left]
+    mid = left + ((right - left) >> 1)
+    left_max = find_max(arr, left, mid)
+    right_max = find_max(arr, mid + 1, right)
+    return max(left_max, right_max)
+
+if __name__ == '__main__':
+    nums = [2, 1, 3, 4, 6, 5, 8, 7, 9]
+    print(f'nums = {nums}')
+    print(f'[find_max]: {find_max(nums, 0, len(nums) - 1)}')
