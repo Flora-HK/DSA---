@@ -77,9 +77,9 @@ if __name__ == '__main__':
 
 # 3. 快排3.0版本
 # 在选择基准值pivot时，可以随机选择一个数，也可以选择中间的数，也可以选择第一个数
-# 在这样的改进之下，时间复杂度变成了O(NlogN)
+# 在这样的改进之下，时间复杂度是各种情况下时间复杂度求得的期望，时间复杂度变成了O(NlogN)，空间复杂度是O(logN)
 import random
-def quick_sort3(arr: list[int], l: int, r: int) -> list[int]:
+def quick_sort3(arr: list[int], l: int, r: int) -> None:
     if l > r:
         return
     pivot =  random.randint(l,  r) # 随机选择一个数,将其放在末尾，在调用partition2进行排序

@@ -1,5 +1,5 @@
 
-def SelectSort(arr: list):
+def SelectSort(arr: list[int]):
     '''每次从i到n-1中找到最小值，放到开头， 时间复杂度为O(n^2)'''
     if len(arr) < 2 or arr is None:
         return arr
